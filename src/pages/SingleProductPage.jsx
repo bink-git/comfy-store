@@ -37,9 +37,9 @@ const SingleProductPage = () => {
     }
   }, [error]);
 
-  if (loading) <Loading />;
+  if (loading) return <Loading />;
 
-  if (error) <Error />;
+  if (error) return <Error />;
 
   const {
     name,
@@ -64,7 +64,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <Stars />
+            <Stars stars={stars} reviews={reviews}/>
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
