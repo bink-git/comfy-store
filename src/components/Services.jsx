@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { services } from '../utils/constants';
+import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi';
+
+const icons = [<GiCompass />, <GiDiamondHard />, <GiStabbedNote />];
 
 const Services = () => {
   return (
@@ -19,10 +22,10 @@ const Services = () => {
         </article>
         <div className="services-center">
           {services.map((service) => {
-            const { id, icon, title, text } = service;
+            const { id, title, text } = service;
             return (
               <article key={id} className="service">
-                <span className="icon">{icon}</span>
+                <span className="icon">{icons[id - 1]}</span>
                 <h4>{title}</h4>
                 <p>{text}</p>
               </article>
